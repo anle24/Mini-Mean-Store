@@ -1,0 +1,33 @@
+<div class="row">
+  <div class="col s3">
+    <h5>Add a new product</h5>
+    <form ng-submit="createProduct()">
+      <div class="input-field">
+        <input type="text" id="product_name" ng-model="newProduct.name" class="validate">
+        <label class="active" for="product_name">Product Name</label>
+      </div>
+      <div class="input-field">
+        <input type="url" id="product_url" ng-model="newProduct.img" class="validate">
+        <label class="active" for="product_url">Image URL</label>
+      </div>
+      <div class="input-field">
+        <textarea id="product_description" ng-model="newProduct.description" class="materialize-textarea"></textarea>
+        <label class="active" for="product_description">Description</label>
+      </div>
+      <div class="input-field">
+        <input type="number" id="product_quantity" ng-model="newProduct.quantity" class="validate">
+        <label class="active" for="product_description">Quantity</label>
+      </div>
+      <div class="input-field">
+        <button class="waves-effect waves-light btn">Add product</button>
+      </div>
+    </form>
+  </div>
+  <div class="col s8">
+    <div ng-repeat="product in products">
+      <img ng-src="{{product.img}}" alt="Product Image">
+      {{product.name}} ({{product.quantity}})
+      <button type="button" ng-click="deleteProduct(product._id)">delete</button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html ng-app="app">
+  <head>
+    <meta charset="utf-8">
+    <title>Mini-Mean Store</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
+    <script src='angular/angular.js'></script>
+    <script src='angular-route/angular-route.js'></script>
+    <script src="assets/app.js"></script>
+    <script src="assets/factories/storeFactory.js"></script>
+    <script src="assets/controllers/indexController.js"></script>
+    <script src="assets/controllers/productsController.js"></script>
+    <script src="assets/controllers/customersController.js"></script>
+    <script src="assets/controllers/ordersController.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <nav>
+        <a href="#!/index" class="waves-effect waves-light btn">Dashboard</a>
+        <a href="#!/products" class="waves-effect waves-light btn">Products</a>
+        <a href="#!/orders" class="waves-effect waves-light btn">Orders</a>
+        <a href="#!/customers" class="waves-effect waves-light btn">Customers</a>
+      </nav>
+      <div ng-view=""></div>
+    </div>
+  </body>
+</html>

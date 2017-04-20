@@ -1,0 +1,46 @@
+<div class="row">
+  <div class="col s3">
+    <h5>Add a new order</h5>
+    <form ng-submit="createOrder()">
+      <div class="input-field">
+        <select class="browser-default" ng-model="newOrder._customer">
+          <option ng-repeat="customer in customers" value="{{customer._id}}">{{customer.name}}</option>
+        </select>
+        <label class="active">Customer</label>
+      </div>
+      <div class="input-field">
+        <select class="browser-default" ng-model="newOrder._product" ng-options="product as product.name for product in products">
+          <!-- <option ng-repeat="product in products" value="">{{product.name}}</option> -->
+        </select>
+        <label class="active">Product</label>
+      </div>
+      <div class="input-field">
+        <input type="number" ng-model="newOrder.quantity" class="validate">
+        <label class="active">Quantity</label>
+      </div>
+      <div class="input-field">
+        <button class="waves-effect waves-light btn">Place order</button>
+      </div>
+    </form>
+  </div>
+  <div class="col s9">
+    <table>
+      <thead>
+        <tr>
+          <th>Customer Name</th>
+          <th>Product</th>
+          <th>Quantity</th>
+          <th>Order date</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="order in orders">
+          <td>{{order._customer.name}}</td>
+          <td>{{order._product.name}}</td>
+          <td>{{order.quantity}}</td>
+          <td>{{order.createdAt}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
